@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - PetShop Moura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="bg-primary text-white text-center py-4">
+        <h1>PetShop Moura</h1>
+        <nav class="mt-3">
+            <a href="index.html" class="text-white text-decoration-none me-3">Home</a>
+            <a href="produtos.html" class="text-white text-decoration-none me-3">Produtos</a>
+            <a href="servicos.html" class="text-white text-decoration-none me-3">Serviços</a>
+            <a href="carrinho.html" class="text-white text-decoration-none fw-bold">Carrinho</a>
+        </nav>
+    </header>
+
+    <script>
+        /////Função criada para calcular o total no carrinho
+        function calculoTotalCarrinho() {
+            let totalCarrinho = 0;
+            
+            const linhas = document.querySelectorAll('.linha-produto');
+
+            linhas.forEach(function(linha) {
+                const precoTexto = linha.querySelector('.preco-unitario').getAttribute('data-preco');
+                const preco = parseFloat(precoTexto);
+                const quantidade = parseInt(linha.querySelector('.input-qtd').value);
+                const subtotal = preco * quantidade;
+
+                linha.querySelector('.subtotal-item').innerText = subtotal.toFixed(2).replace('.', ',');
+
+                totalCarrinho = totalCarrinho + subtotal;
+            });
+
+            const totalFormatado = totalCarrinho.toFixed(2).replace('.', ',');
+            document.getElementById('valor-subtotal').innerText = totalFormatado;
+            document.getElementById('valor-total').innerText = totalFormatado;
+        }
+
+        ////Funçaõ criada para remover o item no carrinho
+        function removerItem(botao) {
+            const linha = botao.closest('tr');
+            linha.remove();
+            calculoTotalCarrinho();
+        }
+
+        window.onload = function() {
+            calculoTotalCarrinho();
+        };
+    </script>
+    
+<main class="container mt-5">
+        <h2 class="text-center mb-5">Seu Carrinho!</h2>
+
+        <div class="row">
+            
+            <div class="col-md-8 mb-4">
+                <div class="table-responsive border rounded bg-light p-3">
+                    <table class="table table-hover align-middle bg-white mb-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Produto</th>
+                                <th>Preço</th>
+                                <th>Quantidade</th>
+                                <th>Subtotal</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="linha-produto">
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="source/acessorio_arranhador_120.jpg" alt="Arranhador de madeira para gatos" class="img-thumbnail me-3" style="width: 60px;">
+                                        <span>Arranhador para gatos</span>
+                                    </div>
+                                </td>
+                                <td>R$<span class="preco-unitario" data-preco="999.14">999,14</span></td>
+                                <td>
+                                    <input type="number" class="form-control input-qtd" value="1" min="1" max="10" style="width: 70px;" onchange="calculoTotalCarrinho()">
+                                </td>
+                                <td>R$<span class="subtotal-item">999,14</span></td>
+                                <td><button class="btn btn-sm btn-danger" onclick="removerItem(this)">Remover</button></td>
+                            </tr>
+                            
+                            <tr class="linha-produto">
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="source/produto_racao_1_120.jpg" alt="Ração comum para gatos" class="img-thumbnail me-3" style="width: 60px;">
+                                        <span>Ração comum para gatos</span>
+                                    </div>
+                                </td>
+                                <td>R$<span class="preco-unitario" data-preco="25.50">25,50</span></td>
+                                <td>
+                                    <input type="number" class="form-control input-qtd" value="2" min="1" max="10" style="width: 70px;" onchange="calculoTotalCarrinho()">
+                                </td>
+                                <td>R$<span class="subtotal-item">51,00</span></td>
+                                <td><button class="btn btn-sm btn-danger" onclick="removerItem(this)">Remover</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card border border-2">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h5 class="mb-0">Resumo do pedido</h5>
+                    </div>
+                    <div class="card-body bg-light">
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Subtotal:</span>
+                            <span>R$<span id="valor-subtotal">1050,14</span></span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Frete:</span>
+                            <span class="text-primary fw-bold">Grátis</span>
+                        </div>
+                        <hr>
+                        <div class="d-flex justify-content-between mb-4 fw-bold fs-5">
+                            <span>Total:</span>
+                            <span>R$<span id="valor-total">1050,14</span></span>
+                        </div>
+                        
+                        <button class="btn btn-warning w-100 fs-5 py-2 mb-2" onclick="alert('Compra finalizada com sucesso! A nossa loja fica muito grata pela preferência.')">Finalizar Compra</button>
+                        <a href="produtos.html" class="btn btn-outline-secondary w-100">Continuar Comprando</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    
+    <footer class="bg-primary text-white text-center py-4">
+        <div class="container">
+            <h4 id="mensagemDeSaudacao"></h4>
+            <p><strong>© 2026 PetShop Moura. Todos os direitos reservados à empresa fictícia.</strong></p>
+            <p>Contato: email@petshopmoura.com | (55) 9 XXXX-XXXX</p>
+            <p>Localização: Rua Fícitia - RS, Número XXX</p></p>
+            <p>Sistema Web fictício desenvolvido por <a href="https://github.com/livaoc" class="text-warning">Livia Alexia</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function exibirSaudacao() {
+            const dataAtual = new Date();
+            const hora = dataAtual.getHours();
+            let saudacao = "";
+
+            if (hora >= 5 && hora < 12) {
+                saudacao = "Bom dia! Seu pet merece o melhor hoje! Agende com a gente!";
+            } else if (hora >= 12 && hora < 18) {
+                saudacao = "Boa tarde! Confira nossos produtos!";
+            } else {
+                saudacao = "Boa noite! Nossa loja virtual funciona 24h por dia! Agende com a gente conforme seu horário preferido!";
+            }
+            document.getElementById("mensagemDeSaudacao").innerText = saudacao;
+        }
+        window.onload = exibirSaudacao;
+    </script>
+</body>
+</html>

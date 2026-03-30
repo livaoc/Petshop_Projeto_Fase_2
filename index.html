@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetShop Moura</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="bg-primary text-white text-center py-4">
+        <h1>PetShop Moura</h1>
+        <nav class="mt-3">
+            <a href="index.html" class="text-white text-decoration-none fw-bold me-3">Home</a>
+            <a href="produtos.html" class="text-white text-decoration-none me-3">Produtos</a>
+            <a href="servicos.html" class="text-white text-decoration-none me-3">Serviços</a>
+            <a href="carrinho.html" class="text-white text-decoration-none">Carrinho</a>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        
+    <section class="mb-5">
+            <div id="meuCarrossel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner rounded border">
+                    <div class="carousel-item active position-relative bg-dark" style="height: 300px;">
+                        <img src="source/produto_racao_1_120.jpg" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; filter: blur(15px); opacity: 0.7;" alt="">
+                        
+                        <div class="position-relative d-flex flex-column justify-content-center align-items-center h-100 text-center" style="z-index: 1;">
+                            
+                            <img src="source/produto_racao_1_120.jpg" alt="Promoção de rações comuns para gatos" style="max-height: 140px;" class="mb-3 rounded shadow">
+                            
+                            <div class="bg-dark bg-opacity-75 p-2 rounded">
+                                <h5 class="text-white fw-bold mb-1">Ofertas em rações de gatos</h5>
+                                <p class="text-white mb-0">As melhores marcas para o seu gatinho amado!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item position-relative bg-dark" style="height: 300px;">
+                        
+                        <img src="source/higiene_caixa_sanitaria_120.jpg" class="position-absolute top-0 start-0 w-100 h-100" style="object-fit: cover; filter: blur(15px); opacity: 0.7;" alt="">
+                        
+                        <div class="position-relative d-flex flex-column justify-content-center align-items-center h-100 text-center" style="z-index: 1;">
+                            
+                            <img src="source/higiene_caixa_sanitaria_120.jpg" alt="Caixas sanitárias em promoção" style="max-height: 140px;" class="mb-3 rounded shadow">
+                            
+                            <div class="bg-dark bg-opacity-75 p-2 rounded">
+                                <h5 class="text-white fw-bold mb-1">Higiene garantida!</h5>
+                                <p class="text-white mb-0">Caixas sanitárias com um precinho bem em conta para seu pet!</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#meuCarrossel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#meuCarrossel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="mb-5">
+            <h2 class="text-center mb-4">Produtos Mais Vendidos</h2>
+            
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="border p-3 h-100">
+                        <img src="source/acessorio_arranhador_120.jpg" alt="Arranhador de madeira para gatos" class="img-fluid mb-2">
+                        <h5>Arranhador para gatos</h5>
+                        <p class="fw-bold">R$ 999,14</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="border p-3 h-100">
+                        <img src="source/acessorio_coleira_120.jpg" alt="Coleira ajustável para gatos" class="img-fluid mb-2">
+                        <h5>Coleira ajustável para gatos</h5>
+                        <p class="fw-bold">R$ 134,20</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="border p-3 h-100">
+                        <img src="source/higiene_caixa_sanitaria_120.jpg" alt="Caixa sanitária para gatos" class="img-fluid mb-2">
+                        <h5>Caixa sanitária</h5>
+                        <p class="fw-bold">R$ 89,12</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="border p-3 h-100">
+                        <img src="source/higiene_escova_120.jpg" alt="Escova para higiene de pets" class="img-fluid mb-2">
+                        <h5>Escova para pets</h5>
+                        <p class="fw-bold">R$ 42,50</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="border p-3 h-100">
+                        <img src="source/produto_racao_2_120.jpg" alt="Ração premium enlatada para cães" class="img-fluid mb-2">
+                        <h5>Ração Premium para cães</h5>
+                        <p class="fw-bold">R$ 32,40 /kg</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="border p-3 h-100">
+                        <img src="source/produto_racao_1_120.jpg" alt="Ração comum para gatos" class="img-fluid mb-2">
+                        <h5>Ração comum para gatos</h5>
+                        <p class="fw-bold">R$ 25,50 /kg</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-primary text-white text-center py-4">
+        <div class="container">
+            <h4 id="mensagemDeSaudacao"></h4>
+            <p><strong>© 2026 PetShop Moura. Todos os direitos reservados à empresa fictícia.</strong></p>
+            <p>Contato: email@petshopmoura.com | (55) 9 XXXX-XXXX</p>
+            <p>Localização: Rua Fícitia - RS, Número XXX</p></p>
+            <p>Sistema Web fictício desenvolvido por <a href="https://github.com/livaoc" class="text-warning">Livia Alexia</a></p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        function exibirSaudacao() {
+            const dataAtual = new Date();
+            const hora = dataAtual.getHours();
+            let saudacao = "";
+
+            if (hora >= 5 && hora < 12) {
+                saudacao = "Bom dia! Seu pet merece o melhor hoje! Agende com a gente!";
+            } else if (hora >= 12 && hora < 18) {
+                saudacao = "Boa tarde! Confira nossos produtos!";
+            } else {
+                saudacao = "Boa noite! Nossa loja virtual funciona 24h por dia! Agende com a gente conforme seu horário preferido!";
+            }
+            document.getElementById("mensagemDeSaudacao").innerText = saudacao;
+        }
+        window.onload = exibirSaudacao;
+    </script>
+</body>
+</html>
